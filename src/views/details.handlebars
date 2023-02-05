@@ -1,0 +1,29 @@
+<h1>{{findCube.name}}</h1>
+<img class="cube" src="{{findCube.imageUrl}}">
+<div class="details">
+    <p><span>Description:</span> {{findCube.description}}</p>
+    <p><span>Difficulty level:</span> {{findCube.difficultyLevel}}</p>
+    <a class="btn" href="/">Back</a>
+    {{#if owner}}
+    <a class="btn" href="/edit/{{findCube._id}}">edit</a>
+    <a class="btn" href="/delete">delete</a>
+    {{/if}}
+    {{#if isLogged }}
+    <a class="btn" href="/cube/attach/{{findCube._id}}">Attach</a>
+    {{/if}}
+</div>
+
+{{#if isLogged}}
+{{#each accessories}}
+<h2>Accessories</h2>
+<div class="accessories">
+    <div class="accessory">
+        <img src="{{imageUrl}}" alt="stickerName">
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+    </div>
+</div>
+{{else}}
+<h3 class="italic">This cube has no accessories yet...</h3>
+{{/each}}
+{{/if}}
