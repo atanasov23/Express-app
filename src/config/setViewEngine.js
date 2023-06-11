@@ -7,7 +7,9 @@ function setViewEngine(app) {
 
     app.set('view engine', 'handlebars');
 
-    app.set('views', path.join('C:/Users/atana/Desktop/Softuni задачи/JS Back-End/express app/src/views'));
+    //app.set('views', path.join('C:/Users/atana/Desktop/Softuni задачи/JS Back-End/express app/src/views'));
+
+    app.set('views', __dirname + '/views');
 }
 
 module.exports = setViewEngine;

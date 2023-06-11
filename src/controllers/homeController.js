@@ -1,7 +1,9 @@
-const fs = require('fs');
+
 const cube = require('../models/cubeModel');
 
 exports.homeView = async (req, res) => {
+
+    console.log(__dirname);
 
     const cubes = await cube.find().lean();
 
